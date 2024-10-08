@@ -1,54 +1,39 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Onko Da</title>
-    <style>
-      h1 {
-        font-size: 40px;
-        font-family: Roboto;
-        font-weight: normal;
-        color: rgb(50,100,200);
-        text-align: center;
-      }
-      #banner {
-        width: 100%;
-        height: 360px; 
-        object-fit: cover;
-      }
-      h2 {
-        font-family: Roboto;
-        font-size: 32px;
-        color: rgb(100,0,200);
-        text-align: center;
-        font-weight: normal;
-      }
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-      .bodytext {
-        font-family: Times New Roman;
-        font-size: 14px;
-        color: rgb(80,80,80);
-      }
-      #container {
-        max-width: 720px;
-        margin: 0 auto;
-      }
+    <style>
+      #banner {
+      width: 100%;
+      height: 360px; 
+      object-fit: cover;
     </style>
+
   </head>
   <body>
-    <div id="container">
-          <h1>Onko Da Careers</h1>
-          <img id="banner" src="https://7a9b8f47-2dc2-4120-9a17-cb9d8e2071e5-00-1cjdnavg2zx7i.sisko.replit.dev/static/banner.jpg">
-          <h2>About Onko Da</h2>
-          <p class="bodytext">
+    <div class="container">
+          <h1 class="text-center mt-2 mb-4"">{{company_name}} Careers</h1>
+          <img class="img-fluid" id= "banner" src="https://7a9b8f47-2dc2-4120-9a17-cb9d8e2071e5-00-1cjdnavg2zx7i.sisko.replit.dev/static/banner.jpg">
+          <h2 class="text-center mt-2 mb-4">About Onko Da</h2>
+          <p class="lead">
       Lorem ipsum odor amet, consectetuer adipiscing elit. Vestibulum taciti est ridiculus laoreet rhoncus morbi. Placerat libero sed dapibus rhoncus, ultrices sollicitudin. Libero montes eget ornare auctor placerat congue sollicitudin viverra! Dui sapien feugiat porttitor lectus ut felis. Nascetur auctor fames blandit ut fermentum posuere suspendisse. Vitae justo torquent lobortis sollicitudin dapibus a mollis class maecenas.
           </p>
-          <h2>Open Positions</h2>
-          <p class="bodytext">
-            TODO - Show the jobs here
+          <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+          <p >
+            {% for job in jobs %}
+              {% include 'jobitem.html' %}
+            {% endfor %}
           </p>
         
-      <div style = "text-align: center;">
-        <button>Contack Us...</button>
+      <div class="text-center">
+        <button type="button" class="btn btn-primary btn-lg">Contact Us</button>
+        <p class="mt-4">
+          Copyright, 2024 <span>&copy</span> Shahadat
+        </p>
       </div>
     </div>
   </body>
